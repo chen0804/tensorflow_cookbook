@@ -52,6 +52,9 @@ else:
     with open(save_file_name, 'w') as temp_output_file:
         writer = csv.writer(temp_output_file)
         writer.writerows(text_data)
+        
+while [] in text_data:                  # delete[],otherwise,x[1] index will out of range
+    text_data.remove([])
 
 texts = [x[1] for x in text_data]
 target = [x[0] for x in text_data]
